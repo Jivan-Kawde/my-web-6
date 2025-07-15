@@ -1142,6 +1142,284 @@
                         </div>
                     </div>
                 <header>
+
+                   
+
+
+    <title>Game Review Hub</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-gray: #f3f4f6;
+            --dark-gray: #6b7280;
+            --white: #ffffff;
+            --rating-color: #f59e0b;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .description {
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .reviewer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .rating {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .star {
+            color: var(--rating-color);
+            margin-right: 3px;
+            font-size: 1.2rem;
+        }
+
+        .platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .platform {
+            background-color: var(--light-gray);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Game Reviews</h1>
+            <p class="description">Honest reviews of trending games from our community of expert gamers</p>
+        </header>
+
+        <main>
+            <div class="reviews-grid">
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <h2 class="game-title">Elden Ring</h2>
+                    <div class="reviewer">Reviewed by Alex on March 15, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">
+                        Absolutely breathtaking open-world experience with challenging combat and deep lore. 
+                        FromSoftware has perfected their formula with this masterpiece of game design.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">PC</span>
+                        <span class="platform">PS5</span>
+                        <span class="platform">Xbox Series X</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <h2 class="game-title">Hades II</h2>
+                    <div class="reviewer">Reviewed by Samantha on May 10, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p class="review-text">
+                        Supergiant delivers another phenomenal roguelike with addictive gameplay loops and 
+                        gorgeous art direction. The narrative hooks you just enough between runs.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">PC</span>
+                        <span class="platform">Switch</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <h2 class="game-title">Final Fantasy XVI</h2>
+                    <div class="reviewer">Reviewed by Jay on June 22, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">
+                        A triumphant evolution of the series with stunning cinematic presentation and 
+                        exhilarating real-time combat. The story will stay with you long after credits roll.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">PS5</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 4 -->
+                <div class="review-card">
+                    <h2 class="game-title">Starfield</h2>
+                    <div class="reviewer">Reviewed by Michael on September 5, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p class="review-text">
+                        Ambitious scale with hundreds of planets to explore, though some feel procedural 
+                        generation went too far. Satisfying ship customization and solid RPG mechanics.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">PC</span>
+                        <span class="platform">Xbox Series X</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 5 -->
+                <div class="review-card">
+                    <h2 class="game-title">The Legend of Zelda: Tears of the Kingdom</h2>
+                    <div class="reviewer">Reviewed by Emma on November 12, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">
+                        Expands everything great about Breath of the Wild with incredible new mechanics 
+                        and verticality. The creativity allowed by Ultrahand is revolutionary.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">Switch</span>
+                    </div>
+                </div>
+
+                <!-- Review Card 6 -->
+                <div class="review-card">
+                    <h2 class="game-title">Baldur's Gate 3</h2>
+                    <div class="reviewer">Reviewed by David on August 3, 2024</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">
+                        The new gold standard for RPGs with unparalleled depth in choices and 
+                        consequences. Combat feels tactical and rewarding, characters are memorable.
+                    </p>
+                    <div class="platforms">
+                        <span class="platform">PC</span>
+                        <span class="platform">PS5</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+
+
+
+
+
+
        
 
 
