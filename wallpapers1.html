@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PlayZone Wallpapers</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5em;
+      color: #00d4ff;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .wallpaper-card {
+      background-color: #ffffff10;
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .wallpaper-card:hover {
+      transform: scale(1.03);
+    }
+
+    .wallpaper-card img {
+      width: 100%;
+      border-radius: 12px;
+      height: auto;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 20px;
+      background-color: #00b7ff;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #0099cc;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚀 Download HD Wallpapers from PlayZone</h1>
+
+  <div class="gallery">
+    <div class="wallpaper-card">
+      <img src="wallpaer/photo1.jpg" alt="Wallpaper 1" />
+      <a href="wallpaer/photo1.jpg" download class="download-btn">⬇ Download</a>
+    </div>
+
+    <div class="wallpaper-card">
+      <img src="wallpaer/photo2.jpg" alt="Wallpaper 2" />
+      <a href="wallpaer/photo2.jpg" download class="download-btn">⬇ Download</a>
+    </div>
+
+    <div class="wallpaper-card">
+      <img src="wallpaer/photo3.jpg" alt="Wallpaper 3" />
+      <a href="wallpaer/photo3.jpg" download class="download-btn">⬇ Download</a>
+    </div>
+
+    <!-- Add more wallpaper cards here -->
+  </div>
+
+  <footer>
+    &copy; 2025 PlayZoneJK.in | All rights reserved
+  </footer>
+
+</body>
+</html>
