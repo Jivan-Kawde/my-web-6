@@ -1512,35 +1512,7 @@ Enemy variety leaves a lot to be desired in the first game, but the combat is fu
 
 
 
-    <header class="py-8 px-4 md:px-16 bg-gray-800 relative">
-        <div class="container mx-auto">
-            <button id="copyCodeBtn" class="absolute top-4 right-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                    <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-                </svg>
-                <span>Copy Code</span>
-            </button>
-
-    <header class="py-8 px-4 md:px-16 bg-gray-800">
-        <div class="container mx-auto">
-            
-        });
-
       
-        document.getElementById('copyCodeBtn')?.addEventListener('click', function() {
-            const htmlCode = document.documentElement.outerHTML;
-            navigator.clipboard.writeText(htmlCode).then(() => {
-                const originalText = this.innerHTML;
-                this.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg><span>Copied!</span>';
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                }, 2000);
-            });
-        });
-</script>
-        });
-    </script>
 
 
 
