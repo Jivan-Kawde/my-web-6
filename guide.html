@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Game Setup Guide for Laptops</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Oxanium', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+        }
+        
+        .step-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.8);
+            border-left: 4px solid #38bdf8;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+        
+        .req-item {
+            transition: all 0.2s ease;
+        }
+        
+        .req-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <header class="py-8 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-sky-400 mb-4">PC Game Setup Guide</h1>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">A comprehensive step-by-step guide to installing and setting up games on your laptop</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <div class="lg:col-span-3">
+                <!-- Introduction -->
+                <div class="bg-slate-800/80 rounded-xl p-6 mb-8 border border-slate-700">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">Before You Begin</h2>
+                    <p class="mb-4">Welcome to our comprehensive game setup guide! Whether you're a seasoned gamer or just starting out, this guide will walk you through the entire process of getting your new PC game running smoothly on your laptop.</p>
+                    <p>Average setup time: 15-30 minutes depending on game size and internet speed.</p>
+                </div>
+                
+                <!-- System Requirements -->
+                <div class="bg-slate-800/80 rounded-xl p-6 mb-8 border border-slate-700">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">1. Check System Requirements</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="req-item bg-slate-900/50 p-4 rounded-lg border border-slate-700">
+                            <div class="flex items-center mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <h3 class="font-medium">Minimum Requirements</h3>
+                            </div>
+                            <ul class="text-sm text-slate-300 space-y-1 pl-7 list-disc list-outside">
+                                <li>OS: Windows 10 64-bit</li>
+                                <li>CPU: Intel Core i5-4460 or AMD FX-8350</li>
+                                <li>RAM: 8GB</li>
+                                <li>GPU: NVIDIA GTX 960 or AMD R9 280</li>
+                                <li>Storage: 50GB available space</li>
+                            </ul>
+                        </div>
+                        <div class="req-item bg-slate-900/50 p-4 rounded-lg border border-slate-700">
+                            <div class="flex items-center mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                <h3 class="font-medium">Recommended Requirements</h3>
+                            </div>
+                            <ul class="text-sm text-slate-300 space-y-1 pl-7 list-disc list-outside">
+                                <li>OS: Windows 10/11 64-bit</li>
+                                <li>CPU: Intel Core i7-9700K or AMD Ryzen 7 3700X</li>
+                                <li>RAM: 16GB</li>
+                                <li>GPU: NVIDIA RTX 2060 or AMD RX 5700</li>
+                                <li>Storage: 50GB SSD</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c62fb903-cdb8-4348-a282-31393ba00de0.png" alt="Screenshot of a laptop displaying system specifications in Windows Settings" class="w-full rounded-lg mb-4 border border-slate-600" />
+                    <div class="mb-4">
+                        <button class="text-sky-400 font-medium flex items-center accordion-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 transition-transform transform" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                            How to Check Your System Specs
+                        </button>
+                        <div class="accordion-content mt-2">
+                            <ol class="text-sm text-slate-300 pl-6 space-y-2 list-decimal">
+                                <li>Press Windows Key + R, type "dxdiag" and press Enter</li>
+                                <li>Check the "System" tab for OS and CPU info</li>
+                                <li>Go to the "Display" tab for GPU details</li>
+                                <li>Open File Explorer > This PC to check available storage</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Purchase & Download -->
+                <div class="step-card rounded-xl p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">2. Purchase & Download the Game</h2>
+                    <p class="mb-4">Choose your preferred game platform and complete the purchase. Popular options include:</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-slate-900/50 p-3 rounded-lg text-center">
+                            <div class="h-12 mb-2 flex justify-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7374b02a-004b-487d-8fd7-aa82b615de83.png" alt="Steam logo in white and black color scheme" class="h-full object-contain" />
+                            </div>
+                            <p class="text-xs">steampowered.com</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-lg text-center">
+                            <div class="h-12 mb-2 flex justify-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/31cc0917-6bde-4978-89a1-44de6c09c48a.png" alt="Epic Games Store logo with purple gradient background" class="h-full object-contain" />
+                            </div>
+                            <p class="text-xs">epicgames.com</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-lg text-center">
+                            <div class="h-12 mb-2 flex justify-center">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9595b253-98b3-4653-bea3-ac62cba0445c.png" alt="GOG.com logo in yellow and white colors" class="h-full object-contain" />
+                            </div>
+                            <p class="text-xs">gog.com</p>
+                        </div>
+                    </div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/596441ec-1550-4d55-94bd-4cfc7ec88455.png" alt="Game purchase page on a digital storefront with download button highlighted" class="w-full rounded-lg mb-4 border border-slate-600" />
+                    <p class="text-sm text-slate-300 mb-4">Once purchased, the platform will automatically add the game to your library where you can begin the download.</p>
+                    <div class="mb-4">
+                        <button class="text-sky-400 font-medium flex items-center accordion-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 transition-transform transform" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                            Download Tips for Large Games
+                        </button>
+                        <div class="accordion-content mt-2">
+                            <ul class="text-sm text-slate-300 pl-6 space-y-2 list-disc">
+                                <li>Use wired connection for stability</li>
+                                <li>Pause other downloads/streaming</li>
+                                <li>Download overnight if on slow connection</li>
+                                <li>Ensure laptop remains powered during download</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Installation -->
+                <div class="step-card rounded-xl p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">3. Install the Game</h2>
+                    <ol class="pl-6 mb-6 space-y-4 list-decimal">
+                        <li class="pl-2">
+                            <span class="font-medium">Run the installer:</span> Double-click the downloaded file or launch through your game platform.
+                        </li>
+                        <li class="pl-2">
+                            <span class="font-medium">Choose install location:</span>
+                            <p class="text-sm text-slate-300 mt-1">Select a drive with sufficient space (SSD recommended for faster load times).</p>
+                        </li>
+                        <li class="pl-2">
+                            <span class="font-medium">Wait for installation:</span>
+                            <p class="text-sm text-slate-300 mt-1">This may take from minutes to hours depending on game size.</p>
+                        </li>
+                    </ol>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/78ce46fb-c890-4310-9a67-07d0c46bcf50.png" alt="Game installation progress bar on a laptop screen showing 45% completion" class="w-full rounded-lg mb-4 border border-slate-600" />
+                    <div class="flex items-center text-sm text-slate-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 mr-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                        <p>Keep your laptop plugged in during installation to prevent interruptions.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Initial Setup -->
+                <div class="step-card rounded-xl p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">4. Initial Game Setup</h2>
+                    <p class="mb-4">After installation, you may need to complete some first-time setup steps:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium flex items-center mb-2">
+                                <span class="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-sm mr-2">1</span>
+                                Graphics Settings
+                            </h3>
+                            <p class="text-sm text-slate-300">Select preset quality (Medium recommended for laptops) or customize based on your hardware.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium flex items-center mb-2">
+                                <span class="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-sm mr-2">2</span>
+                                Control Setup
+                            </h3>
+                            <p class="text-sm text-slate-300">Configure keyboard/mouse or connect a controller.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium flex items-center mb-2">
+                                <span class="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-sm mr-2">3</span>
+                                Account Linking
+                            </h3>
+                            <p class="text-sm text-slate-300">Sign in to platform account if required.</p>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium flex items-center mb-2">
+                                <span class="w-6 h-6 rounded-full bg-sky-500 flex items-center justify-center text-sm mr-2">4</span>
+                                Updates
+                            </h3>
+                            <p class="text-sm text-slate-300">Download any available patches.</p>
+                        </div>
+                    </div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c85af9f0-380e-4a2e-84d0-aee2de5bbcaf.png" alt="Game settings screen with video quality options highlighted on a laptop display" class="w-full rounded-lg border border-slate-600" />
+                </div>
+
+                <!-- Step 5: Play & Optimize -->
+                <div class="step-card rounded-xl p-6 mb-8">
+                    <h2 class="text-2xl font-semibold text-sky-400 mb-4">5. Play & Optimize Performance</h2>
+                    <p class="mb-6">Your game is now ready to play! Here are some optimization tips for laptops:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium text-lg mb-2 text-emerald-400">Power Settings</h3>
+                            <ul class="text-sm text-slate-300 space-y-2">
+                                <li>Set power plan to "High performance"</li>
+                                <li>Keep laptop plugged in while gaming</li>
+                                <li>Enable "Game Mode" in Windows</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-900/50 p-4 rounded-lg">
+                            <h3 class="font-medium text-lg mb-2 text-emerald-400">Cooling</h3>
+                            <ul class="text-sm text-slate-300 space-y-2">
+                                <li>Use a laptop cooling pad</li>
+                                <li>Keep vents unobstructed</li>
+                                <li>Clean dust from fans regularly</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 px-4 py-3 bg-yellow-900/30 rounded-lg border border-yellow-800 text-yellow-200">
+                        <h3 class="font-medium mb-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                            </svg>
+                            Important
+                        </h3>
+                        <p class="text-sm">Monitor laptop temperatures using software like HWMonitor. If your laptop gets too hot, lower graphical settings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-4">
+                <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+                    <h3 class="font-medium text-sky-400 mb-3">Quick Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-300 hover:text-sky-400 text-sm block" onclick="scrollToStep(1)">System Requirements</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-sky-400 text-sm block" onclick="scrollToStep(2)">Purchase & Download</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-sky-400 text-sm block" onclick="scrollToStep(3)">Installation</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-sky-400 text-sm block" onclick="scrollToStep(4)">Initial Setup</a></li>
+                        <li><a href="#" class="text-slate-300 hover:text-sky-400 text-sm block" onclick="scrollToStep(5)">Play & Optimize</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+                    <h3 class="font-medium text-sky-400 mb-3">Estimated Completion</h3>
+                    <div class="bg-slate-900/50 p-3 rounded-lg mb-3">
+                        <div class="flex justify-between text-xs mb-1 text-slate-300">
+                            <span>Current Step</span>
+                            <span>1/5</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-sky-500 h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                        <div class="flex justify-between mt-2">
+                            <span class="text-xs text-slate-400">Time elapsed: 0 min</span>
+                            <span class="text-xs text-slate-400">Remaining: ~25 min</span>
+                        </div>
+                    </div>
+                    <button class="w-full py-2 bg-sky-600 hover:bg-sky-700 rounded-lg font-medium text-sm transition-colors">
+                        Mark as Complete
+                    </button>
+                </div>
+
+                <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+                    <h3 class="font-medium text-sky-400 mb-3">Helpful Tools</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="flex items-center text-sm text-slate-300 hover:text-sky-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-sky-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                                </svg>
+                                Download Speed Test
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-sm text-slate-300 hover:text-sky-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-sky-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                                </svg>
+                                FPS Monitor
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center text-sm text-slate-300 hover:text-sky-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-sky-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                                </svg>
+                                Graphics Tweaks Guide
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-900/80 py-6 px-4 border-t border-slate-700">
+        <div class="container mx-auto max-w-5xl text-center text-sm text-slate-400">
+            <p>© 2023 PC Game Setup Guide. This is a fictional tutorial for educational purposes only.</p>
+            <p class="mt-1">Game names and logos are property of their respective owners.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Scroll to step
+        function scrollToStep(stepNum) {
+            const stepElements = document.querySelectorAll('.step-card');
+            if (stepNum <= stepElements.length) {
+                stepElements[stepNum - 1].scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Add pulse animation briefly
+                stepElements[stepNum - 1].classList.add('animate-pulse');
+                setTimeout(() => {
+                    stepElements[stepNum - 1].classList.remove('animate-pulse');
+                }, 1000);
+            }
+        }
+
+        // Update progress as user scrolls
+        window.addEventListener('scroll', function() {
+            const stepElements = document.querySelectorAll('.step-card');
+            const progressBar = document.querySelector('.bg-sky-500');
+            const percentage = Math.min(100, (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 * 1.2);
+            progressBar.style.width = percentage + '%';
+            
+            // Update current step in sidebar
+            stepElements.forEach((step, index) => {
+                const rect = step.getBoundingClientRect();
+                if (rect.top <= 200) {
+                    const currentStepElement = document.querySelector('.bg-slate-900/50 p-3 span');
+                    if (currentStepElement) {
+                        currentStepElement.textContent = (index + 1) + '/5';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
