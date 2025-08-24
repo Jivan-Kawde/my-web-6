@@ -948,6 +948,94 @@
         </div>
     </section>
 
+    
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+    }
+    h2 {
+      color: #00ffcc;
+    }
+    .news-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #444;
+    }
+    .news-item a {
+      color: #ff4c4c;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+    .news-item a:hover {
+      text-decoration: underline;
+    }
+    .summary {
+      color: #ccc;
+      margin-top: 5px;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+    small {
+      display: block;
+      margin-top: 8px;
+      color: #777;
+      font-size: 0.8em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📰 Live Gaming News</h2>
+  <div id="news-feed">Loading latest news...</div>
+
+  <script>
+    const feedUrl = encodeURIComponent("https://feeds.ign.com/ign/games-all");
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
+
+    async function fetchNews() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const newsContainer = document.getElementById("news-feed");
+        newsContainer.innerHTML = ""; // clear previous items
+
+        data.items.slice(0, 10).forEach(item => {
+          const newsItem = document.createElement("div");
+          newsItem.className = "news-item";
+
+          // Use content if available, otherwise description
+          let contentHTML = item.content || item.description || "";
+          // Strip HTML tags for a clean summary
+          const tempDiv = document.createElement("div");
+          tempDiv.innerHTML = contentHTML;
+          const summaryText = tempDiv.textContent || tempDiv.innerText || "";
+
+          newsItem.innerHTML = `
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer"><strong>${item.title}</strong></a>
+            <div class="summary">${summaryText}</div>
+            <small>${new Date(item.pubDate).toLocaleString()}</small>
+          `;
+
+          newsContainer.appendChild(newsItem);
+        });
+      } catch (error) {
+        document.getElementById("news-feed").innerText = "Failed to load news.";
+        console.error("News fetch error:", error);
+      }
+    }
+
+    fetchNews(); // Initial load
+    setInterval(fetchNews, 1000 * 60 * 5); // Refresh every 5 minutes
+  </script>
+
+</body>
+
+
+
 
     <title>Game System Requirements</title>
     <style>
@@ -2378,6 +2466,7 @@
 
     
 </script>
+
 
 
 
