@@ -58,6 +58,106 @@
                     <p class="mb-4">Welcome to our comprehensive game setup guide! Whether you're a seasoned gamer or just starting out, this guide will walk you through the entire process of getting your new PC game running smoothly on your laptop.</p>
                     <p>Average setup time: 15-30 minutes depending on game size and internet speed.</p>
                 </div>
+
+
+                <!-- Add this where you want the graphics tweak form -->
+
+<section id="graphics-tweak" style="background:#1e1e1e; border-radius:12px; padding:20px; max-width:600px; margin:30px auto; color:#e0e0e0; font-family: Arial, sans-serif;">
+
+  <h2 style="color:#00ffc8; text-align:center; margin-bottom:20px;">🎮 Game Setup & Graphics Tweaks</h2>
+
+  <label for="inputGame" style="display:block; margin-top:10px; font-weight:bold;">Game Name:</label>
+  <input type="text" id="inputGame" placeholder="e.g., GTA V" style="width:100%; padding:8px; margin-top:6px; border:none; border-radius:6px; background:#2a2a2a; color:#fff; font-size:1rem;" />
+
+  <label for="inputGPU" style="display:block; margin-top:10px; font-weight:bold;">GPU:</label>
+  <input type="text" id="inputGPU" placeholder="e.g., GTX 1650" style="width:100%; padding:8px; margin-top:6px; border:none; border-radius:6px; background:#2a2a2a; color:#fff; font-size:1rem;" />
+
+  <label for="inputCPU" style="display:block; margin-top:10px; font-weight:bold;">CPU:</label>
+  <input type="text" id="inputCPU" placeholder="e.g., Ryzen 5 3600" style="width:100%; padding:8px; margin-top:6px; border:none; border-radius:6px; background:#2a2a2a; color:#fff; font-size:1rem;" />
+
+  <label for="inputRAM" style="display:block; margin-top:10px; font-weight:bold;">RAM (GB):</label>
+  <input type="number" id="inputRAM" placeholder="e.g., 16" min="1" style="width:100%; padding:8px; margin-top:6px; border:none; border-radius:6px; background:#2a2a2a; color:#fff; font-size:1rem;" />
+
+  <button onclick="generateGraphicsSummary()" style="margin-top:20px; width:100%; padding:12px; background:#00ffc8; border:none; border-radius:8px; font-size:1.1rem; font-weight:bold; color:#000; cursor:pointer; transition: background-color 0.3s ease;">
+    Get Game Settings
+  </button>
+
+  <div id="graphicsOutput" style="margin-top:20px; background:#2a2a2a; border-left:5px solid #00ffc8; border-radius:6px; padding:15px; min-height:120px; line-height:1.5; font-size:1rem;"></div>
+</section>
+
+<script>
+  function generateGraphicsSummary() {
+    const game = document.getElementById("inputGame").value.toLowerCase().trim();
+    const gpu = document.getElementById("inputGPU").value.toLowerCase().trim();
+    const cpu = document.getElementById("inputCPU").value.toLowerCase().trim();
+    const ramInput = document.getElementById("inputRAM").value.trim();
+    const ram = parseInt(ramInput);
+
+    if (!game || !gpu || !cpu || !ramInput || isNaN(ram)) {
+      document.getElementById("graphicsOutput").innerHTML = "<em>Please fill in all fields with valid data.</em>";
+      return;
+    }
+
+    let summary = `🔍 Custom Settings for <strong>${game.toUpperCase()}</strong><br><br>`;
+
+    function gpuMatch(keywords) {
+      return keywords.some(keyword => gpu.includes(keyword));
+    }
+
+    if (gpuMatch(["gtx 1050", "gtx 1650", "rx 5600", "gtx 1060"])) {
+      summary += "- Graphics Preset: Medium to Low<br>";
+      summary += "- Recommended Resolution: 1080p<br>";
+      summary += "- DLSS/FSR: Off or Balanced (if available)<br>";
+      summary += "- Shadows: Low to Medium<br>";
+      summary += "- Ray Tracing: Off (performance heavy)<br>";
+    } else if (gpuMatch(["rtx 2060", "rtx 3060", "rx 6600", "rx 5700"])) {
+      summary += "- Graphics Preset: High<br>";
+      summary += "- Recommended Resolution: 1080p or 1440p<br>";
+      summary += "- DLSS/FSR: On (balanced or quality mode)<br>";
+      summary += "- Shadows: Medium to High<br>";
+      summary += "- Ray Tracing: Medium (if supported)<br>";
+    } else if (gpuMatch(["rtx 3070", "rtx 3080", "rtx 4070", "rtx 4080", "rx 6800", "rx 6900", "rx 7900"])) {
+      summary += "- Graphics Preset: Ultra<br>";
+      summary += "- Recommended Resolution: 1440p or 4K<br>";
+      summary += "- DLSS/FSR: Quality or Ultra Performance<br>";
+      summary += "- Shadows: High to Ultra<br>";
+      summary += "- Ray Tracing: On (enabled for best visuals)<br>";
+    } else {
+      summary += "- Graphics Preset: Low or Custom<br>";
+      summary += "- Recommended Resolution: 720p or 900p<br>";
+      summary += "- DLSS/FSR: Off<br>";
+      summary += "- Shadows: Low<br>";
+      summary += "- Ray Tracing: Off<br>";
+    }
+
+    if (ram < 8) {
+      summary += "- ⚠️ RAM below 8GB can cause performance issues, close background apps.<br>";
+    } else if (ram < 16) {
+      summary += "- RAM is decent, but 16GB is recommended for smooth gameplay.<br>";
+    } else {
+      summary += "- ✅ RAM is excellent for modern gaming.<br>";
+    }
+
+    function cpuMatch(keywords) {
+      return keywords.some(keyword => cpu.includes(keyword));
+    }
+
+    if (cpuMatch(["i3", "dual core", "athlon", "pentium"])) {
+      summary += "- ⚠️ CPU may bottleneck in demanding games; consider upgrade.<br>";
+    } else if (cpuMatch(["i5", "ryzen 5"])) {
+      summary += "- CPU suitable for most games at 1080p.<br>";
+    } else if (cpuMatch(["i7", "ryzen 7", "i9", "ryzen 9"])) {
+      summary += "- ✅ High-performance CPU for demanding games and streaming.<br>";
+    } else {
+      summary += "- CPU info unclear, ensure it meets game minimum requirements.<br>";
+    }
+
+    summary += "<br>🎯 Pro Tip: Keep GPU drivers updated and close unnecessary apps while gaming.";
+
+    document.getElementById("graphicsOutput").innerHTML = summary;
+  }
+</script>
+
         
 
 
@@ -655,6 +755,7 @@
     </script>
 </body>
 </html>
+
 
 
 
