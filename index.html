@@ -949,27 +949,24 @@
     </section>
 
     
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <title>Gaming Hub - News & Reviews</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #111;
-      color: #fff;
+      color: #ccc;
       padding: 20px;
-      max-width: 900px;
-      margin: auto;
     }
+
     h1, h2 {
       color: #00ffcc;
     }
 
     /* Original Articles */
-    .original-content {
-      background: #222;
-      padding: 15px 20px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-    }
     .original-content article {
       margin-bottom: 30px;
     }
@@ -1003,7 +1000,7 @@
       font-size: 1.1em;
       line-height: 1.6em;
     }
-    small {
+    .news-item small {
       display: block;
       margin-top: 8px;
       color: #777;
@@ -1015,7 +1012,7 @@
 
   <h1>🎮 Welcome to Gaming Hub</h1>
 
-  <!-- ====================== ORIGINAL CONTENT SECTION ====================== -->
+  <!-- ✅ ORIGINAL CONTENT SECTION -->
   <section class="original-content">
     <h2>🔥 Featured Articles & Reviews</h2>
 
@@ -1038,10 +1035,10 @@
       </p>
     </article>
 
-    <!-- 💡 Add more original articles below this line -->
+    <!-- ✏️ Add more original articles below this line -->
   </section>
 
-  <!-- ====================== LIVE GAMING NEWS SECTION ====================== -->
+  <!-- ✅ NEWS SECTION -->
   <h2>📰 Live Gaming News</h2>
   <div id="news-feed">Loading latest news...</div>
 
@@ -1061,10 +1058,9 @@
           const newsItem = document.createElement("div");
           newsItem.className = "news-item";
 
-          // Use content if available, fallback to description
-          let contentHTML = item.content || item.description || "";
+          // Use content or description as summary
           const tempDiv = document.createElement("div");
-          tempDiv.innerHTML = contentHTML;
+          tempDiv.innerHTML = item.content || item.description || "";
           const summaryText = tempDiv.textContent || tempDiv.innerText || "";
 
           newsItem.innerHTML = `
@@ -1086,6 +1082,7 @@
   </script>
 
 </body>
+
 
 
     <title>Game System Requirements</title>
@@ -2517,6 +2514,7 @@
 
     
 </script>
+
 
 
 
