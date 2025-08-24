@@ -949,16 +949,41 @@
     </section>
 
     
+  <title>Gaming Hub - News & Reviews</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #fff;
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
-    h2 {
+    h1, h2 {
       color: #00ffcc;
     }
+
+    /* Original Articles */
+    .original-content {
+      background: #222;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    .original-content article {
+      margin-bottom: 30px;
+    }
+    .original-content article h3 {
+      color: #ff4c4c;
+      margin-bottom: 10px;
+    }
+    .original-content article p {
+      line-height: 1.7;
+      color: #ccc;
+      font-size: 1.05em;
+    }
+
+    /* News Feed */
     .news-item {
       margin-bottom: 20px;
       padding-bottom: 15px;
@@ -988,6 +1013,35 @@
 </head>
 <body>
 
+  <h1>🎮 Welcome to Gaming Hub</h1>
+
+  <!-- ====================== ORIGINAL CONTENT SECTION ====================== -->
+  <section class="original-content">
+    <h2>🔥 Featured Articles & Reviews</h2>
+
+    <article>
+      <h3>Top 3 Reasons Why ‘Elden Ring’ Redefined Open World Games</h3>
+      <p>
+        When Elden Ring launched, it changed the expectations for open-world RPGs. With no hand-holding, atmospheric exploration, and truly challenging bosses, it gave players a raw and immersive experience.
+      </p>
+      <p>
+        <strong>1. No Map Markers = Real Exploration:</strong> Unlike most games that flood your map with icons, Elden Ring lets you explore naturally. Every discovery feels earned, not forced.
+      </p>
+      <p>
+        <strong>2. Seamless World Design:</strong> The Lands Between is vast, dangerous, and beautifully designed. From creepy catacombs to towering castles, the world feels alive without needing dialogue boxes.
+      </p>
+      <p>
+        <strong>3. Boss Fights with Real Consequences:</strong> The boss designs are punishing but fair. Whether you're facing Margit or Malenia, you'll remember every win.
+      </p>
+      <p>
+        If you haven’t tried it yet, Elden Ring is more than just hype. It's a modern masterpiece.
+      </p>
+    </article>
+
+    <!-- 💡 Add more original articles below this line -->
+  </section>
+
+  <!-- ====================== LIVE GAMING NEWS SECTION ====================== -->
   <h2>📰 Live Gaming News</h2>
   <div id="news-feed">Loading latest news...</div>
 
@@ -1001,15 +1055,14 @@
         const data = await response.json();
 
         const newsContainer = document.getElementById("news-feed");
-        newsContainer.innerHTML = ""; // clear previous items
+        newsContainer.innerHTML = "";
 
         data.items.slice(0, 10).forEach(item => {
           const newsItem = document.createElement("div");
           newsItem.className = "news-item";
 
-          // Use content if available, otherwise description
+          // Use content if available, fallback to description
           let contentHTML = item.content || item.description || "";
-          // Strip HTML tags for a clean summary
           const tempDiv = document.createElement("div");
           tempDiv.innerHTML = contentHTML;
           const summaryText = tempDiv.textContent || tempDiv.innerText || "";
@@ -1033,8 +1086,6 @@
   </script>
 
 </body>
-
-
 
 
     <title>Game System Requirements</title>
@@ -2466,6 +2517,7 @@
 
     
 </script>
+
 
 
 
