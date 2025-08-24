@@ -1954,6 +1954,256 @@
     </script>
 
 
+  <title>Gaming Quiz with Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #ccc;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #00ffcc;
+    }
+
+    .quiz-container {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .question {
+      margin-bottom: 15px;
+    }
+
+    .options label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ff4c4c;
+    }
+
+    .last-score {
+      color: #999;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    /* Popup styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: #222;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .popup h3 {
+      margin-bottom: 15px;
+      color: #00ffcc;
+    }
+
+    .popup button {
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .popup button.cancel-btn {
+      background: #ff4c4c;
+      color: #fff;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ POPUP -->
+  <div class="popup-overlay" id="quizPopup">
+    <div class="popup">
+      <h3>🧠 Want to test your gaming knowledge?</h3>
+      <p>Take our quick quiz and earn your gamer rank!</p>
+      <button onclick="closePopupAndScroll()">🎮 Start Quiz</button>
+      <button onclick="closePopup()" class="cancel-btn">❌ Cancel</button>
+    </div>
+  </div>
+
+  <h2>🎮 Gaming Knowledge Quiz</h2>
+
+  <!-- ✅ QUIZ SECTION -->
+  <div class="quiz-container" id="quiz-section">
+    <div id="quiz"></div>
+    <button onclick="submitQuiz()">Submit</button>
+    <div class="result" id="result"></div>
+    <div class="last-score" id="lastScore"></div>
+  </div>
+
+  <script>
+    // Auto popup on load
+    window.onload = function () {
+      document.getElementById('quizPopup').style.display = 'flex';
+
+      // Show last score from localStorage
+      const last = localStorage.getItem("lastQuizResult");
+      if (last) {
+        document.getElementById('lastScore').innerText = `📌 Last score: ${last}`;
+      }
+
+      loadQuiz(); // Load quiz
+    }
+
+    function closePopupAndScroll() {
+      document.getElementById('quizPopup').style.display = 'none';
+      document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function closePopup() {
+      document.getElementById('quizPopup').style.display = 'none';
+    }
+
+    // Quiz logic
+    const allQuestions = [
+      {
+        question: "Which company developed the game 'The Witcher 3'?",
+        options: ["Ubisoft", "CD Projekt Red", "Bethesda", "EA"],
+        answer: "CD Projekt Red"
+      },
+      {
+        question: "In which year was the first PlayStation released?",
+        options: ["1992", "1994", "1996", "1998"],
+        answer: "1994"
+      },
+      {
+        question: "What is the name of the protagonist in the 'God of War' series?",
+        options: ["Kratos", "Marcus", "Nathan", "Ezio"],
+        answer: "Kratos"
+      },
+      {
+        question: "Which game is known for the phrase 'The cake is a lie'?",
+        options: ["Half-Life", "Portal", "Minecraft", "BioShock"],
+        answer: "Portal"
+      },
+      {
+        question: "Which of these is NOT a battle royale game?",
+        options: ["PUBG", "Fortnite", "Apex Legends", "Assassin’s Creed"],
+        answer: "Assassin’s Creed"
+      },
+      {
+        question: "Which game series features the character 'Master Chief'?",
+        options: ["Call of Duty", "Halo", "Mass Effect", "Crysis"],
+        answer: "Halo"
+      },
+      {
+        question: "Which studio created 'Red Dead Redemption 2'?",
+        options: ["Ubisoft", "Rockstar Games", "EA", "2K"],
+        answer: "Rockstar Games"
+      },
+      {
+        question: "What engine does Fortnite run on?",
+        options: ["Unity", "CryEngine", "Unreal Engine", "Frostbite"],
+        answer: "Unreal Engine"
+      }
+    ];
+
+    let selectedQuestions = [];
+
+    function getRandomQuestions() {
+      const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, 5);
+    }
+
+    function loadQuiz() {
+      selectedQuestions = getRandomQuestions();
+      const quizContainer = document.getElementById('quiz');
+      quizContainer.innerHTML = '';
+      selectedQuestions.forEach((q, index) => {
+        const qHTML = `
+          <div class="question">
+            <p><strong>Q${index + 1}:</strong> ${q.question}</p>
+            <div class="options">
+              ${q.options.map(opt => `
+                <label>
+                  <input type="radio" name="q${index}" value="${opt}">
+                  ${opt}
+                </label>
+              `).join('')}
+            </div>
+          </div>
+        `;
+        quizContainer.innerHTML += qHTML;
+      });
+    }
+
+    function getRank(score) {
+      if (score === 5) return "🏆 Master Gamer";
+      if (score >= 3) return "🎯 Intermediate Gamer";
+      return "🎮 Beginner";
+    }
+
+    function submitQuiz() {
+      let score = 0;
+      selectedQuestions.forEach((q, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && selected.value === q.answer) {
+          score++;
+        }
+      });
+
+      const rank = getRank(score);
+      const resultContainer = document.getElementById('result');
+      resultContainer.innerHTML = `
+        You scored ${score} out of 5.<br><strong>Your Rank: ${rank}</strong>
+        <br><br>
+        <a href="https://wa.me/?text=I scored ${score}/5 in the Gaming Quiz (${rank}) on PlayZone! 🎮" target="_blank">
+          📤 Share on WhatsApp
+        </a>
+      `;
+
+      // Save result locally
+      localStorage.setItem("lastQuizResult", `${score}/5 - ${rank}`);
+      document.getElementById('lastScore').innerText = `📌 Last score: ${score}/5 - ${rank}`;
+    }
+  </script>
+
+</body>
+
+
+
+
 
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -2514,6 +2764,7 @@
 
     
 </script>
+
 
 
 
