@@ -1,0 +1,62 @@
+#include <graphics.h>
+#include <conio.h>
+#include <iostream>
+
+using namespace std;
+
+// Function to draw the X and Y axes (divide the screen into 4 quadrants)
+void drawAxes(int centerX, int centerY) {
+    setcolor(WHITE);
+
+    // Draw the horizontal line (X axis)
+    line(0, centerY, getmaxx(), centerY);
+    
+    // Draw the vertical line (Y axis)
+    line(centerX, 0, centerX, getmaxy());
+}
+
+// Function to draw a line from the center to the mouse position
+void drawLineToMouse(int centerX, int centerY, int mouseX, int mouseY) {
+    setcolor(YELLOW);
+    line(centerX, centerY, mouseX, mouseY);  // Draw line from center to mouse position
+}
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+
+    int centerX = getmaxx() / 2;  // Center of the screen (X axis)
+    int centerY = getmaxy() / 2;  // Center of the screen (Y axis)
+
+    // Draw the axes
+    drawAxes(centerX, centerY);
+
+    while (true) {
+        int mouseX, mouseY;
+        int buttonState;
+
+        // Get the current mouse position
+        mouseX = mousex();
+        mouseY = mousey();
+        buttonState = mousebutton();
+
+        // Check if the user clicked the mouse or pressed a key to exit
+        if (buttonState == 1) {
+            // Clear previous line before drawing new one
+            cleardevice();
+            drawAxes(centerX, centerY);  // Redraw axes
+            drawLineToMouse(centerX, centerY, mouseX, mouseY);
+        }
+
+        // Exit when the user presses the ESC key
+        if (kbhit()) {
+            char ch = getch();
+            if (ch == 27)  // ESC key
+                break;
+        }
+    }
+
+    // Close the graphics mode
+    closegraph();
+    return 0;
+}

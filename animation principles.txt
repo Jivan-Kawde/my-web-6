@@ -1,0 +1,102 @@
+#include <graphics.h>
+#include <conio.h>
+#include <cmath>
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+using namespace std;
+
+// Screen dimensions
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+
+// Circle parameters
+int centerX = SCREEN_WIDTH / 2;
+int centerY = SCREEN_HEIGHT / 2;
+int radius = 50;
+float angle = 0.0f; // Rotation angle
+float speed = 2.0f; // Speed of the movement
+float scaleFactor = 1.0f; // Scaling factor
+
+// Function to draw the circle at a given position and scale
+void drawCircle(int x, int y, int radius) {
+    setcolor(YELLOW);
+    circle(x, y, radius); // Draw circle at (x, y) with the given radius
+}
+
+// Function to clear the previous frame
+void clearScreen() {
+    cleardevice(); // Clears the screen
+}
+
+// Function to update the position of the circle for movement
+void updatePosition(int &x, int &y, float speed) {
+    x += speed;
+    if (x > SCREEN_WIDTH) {
+        x = 0; // Reset position when the circle moves off-screen
+    }
+}
+
+// Function to update the rotation angle
+void updateRotation(float &angle, float deltaAngle) {
+    angle += deltaAngle;
+    if (angle >= 360.0f) {
+        angle -= 360.0f; // Keep angle in range [0, 360]
+    }
+}
+
+// Function to update the scale of the circle
+void updateScale(float &scaleFactor) {
+    scaleFactor = 1.0f + 0.5f * sin(angle * M_PI / 180.0f); // Oscillate scale between 1 and 1.5
+}
+
+// Function to rotate the circle around its center
+void rotatePoint(int &x, int &y, int cx, int cy, float angle) {
+    float rad = angle * M_PI / 180.0f; // Convert angle to radians
+    int newX = static_cast<int>((x - cx) * cos(rad) - (y - cy) * sin(rad) + cx);
+    int newY = static_cast<int>((x - cx) * sin(rad) + (y - cy) * cos(rad) + cy);
+    x = newX;
+    y = newY;
+}
+
+int main() {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");  // Initialize the graphics window
+
+    // Animation loop
+    while (true) {
+        // Clear the previous frame
+        clearScreen();
+
+        // Update position, rotation, and scale
+        updatePosition(centerX, centerY, speed);
+        updateRotation(angle, 2.0f); // Rotate by 2 degrees per frame
+        updateScale(scaleFactor);
+
+        // Calculate the current radius based on scale
+        int currentRadius = static_cast<int>(radius * scaleFactor);
+
+        // Rotate the position of the circle to simulate rotation
+        int rotatedX = centerX + currentRadius * cos(angle * M_PI / 180.0f);
+        int rotatedY = centerY + currentRadius * sin(angle * M_PI / 180.0f);
+
+        // Draw the rotated and scaled circle
+        drawCircle(rotatedX, rotatedY, currentRadius);
+
+        // Display the updated screen
+        delay(20); // Wait for 20ms (for smooth animation)
+
+        // Check for ESC key to exit the animation
+        if (kbhit()) {
+            char ch = getch();
+            if (ch == 27) {
+                break; // Exit the loop if ESC is pressed
+            }
+        }
+    }
+
+    // Close the graphics mode
+    closegraph();
+    return 0;
+}
