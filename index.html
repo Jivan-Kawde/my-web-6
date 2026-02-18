@@ -3230,49 +3230,6 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
     <!-- ✏️ Add more original articles below this line -->
   </section>
 
-  <!-- ✅ NEWS SECTION -->
-  <h2>📰 Live Gaming News</h2>
-  <div id="news-feed">Loading latest news...</div>
-
-  <script>
-    const feedUrl = encodeURIComponent("https://feeds.ign.com/ign/games-all");
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`;
-
-    async function fetchNews() {
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        const newsContainer = document.getElementById("news-feed");
-        newsContainer.innerHTML = "";
-
-        data.items.slice(0, 10).forEach(item => {
-          const newsItem = document.createElement("div");
-          newsItem.className = "news-item";
-
-          // Use content or description as summary
-          const tempDiv = document.createElement("div");
-          tempDiv.innerHTML = item.content || item.description || "";
-          const summaryText = tempDiv.textContent || tempDiv.innerText || "";
-
-          newsItem.innerHTML = `
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer"><strong>${item.title}</strong></a>
-            <div class="summary">${summaryText}</div>
-            <small>${new Date(item.pubDate).toLocaleString()}</small>
-          `;
-
-          newsContainer.appendChild(newsItem);
-        });
-      } catch (error) {
-        document.getElementById("news-feed").innerText = "Failed to load news.";
-        console.error("News fetch error:", error);
-      }
-    }
-
-    fetchNews(); // Initial load
-    setInterval(fetchNews, 1000 * 60 * 5); // Refresh every 5 minutes
-  </script>
-
 </body>
 
 
@@ -4945,6 +4902,7 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
 
     
 </script>
+
 
 
 
