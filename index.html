@@ -1,16 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async="async" data-cfasync="false" src="//pl27928070.effectivegatecpm.com/428ab928a941c02c84774811255931cb/invoke.js"></script>
-   <div id="container-428ab928a941c02c84774811255931cb"></div>
-    <script src="//code.tidio.co/xzhfajh4htmoye2lxahlyhg9miqjbnhh.js" async></script>
-    <meta name="google-adsense-account" content="ca-pub-7798465150283735">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7798465150283735"
-     crossorigin="anonymous"></script>
-    
     <title>PLAYZONE Gaming Hub | Ultimate Game Collection</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
@@ -4234,109 +4227,6 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
       document.getElementById('quizPopup').style.display = 'none';
     }
 
-    // Quiz logic
-    const allQuestions = [
-      {
-        question: "Which company developed the game 'The Witcher 3'?",
-        options: ["Ubisoft", "CD Projekt Red", "Bethesda", "EA"],
-        answer: "CD Projekt Red"
-      },
-      {
-        question: "In which year was the first PlayStation released?",
-        options: ["1992", "1994", "1996", "1998"],
-        answer: "1994"
-      },
-      {
-        question: "What is the name of the protagonist in the 'God of War' series?",
-        options: ["Kratos", "Marcus", "Nathan", "Ezio"],
-        answer: "Kratos"
-      },
-      {
-        question: "Which game is known for the phrase 'The cake is a lie'?",
-        options: ["Half-Life", "Portal", "Minecraft", "BioShock"],
-        answer: "Portal"
-      },
-      {
-        question: "Which of these is NOT a battle royale game?",
-        options: ["PUBG", "Fortnite", "Apex Legends", "Assassin’s Creed"],
-        answer: "Assassin’s Creed"
-      },
-      {
-        question: "Which game series features the character 'Master Chief'?",
-        options: ["Call of Duty", "Halo", "Mass Effect", "Crysis"],
-        answer: "Halo"
-      },
-      {
-        question: "Which studio created 'Red Dead Redemption 2'?",
-        options: ["Ubisoft", "Rockstar Games", "EA", "2K"],
-        answer: "Rockstar Games"
-      },
-      {
-        question: "What engine does Fortnite run on?",
-        options: ["Unity", "CryEngine", "Unreal Engine", "Frostbite"],
-        answer: "Unreal Engine"
-      }
-    ];
-
-    let selectedQuestions = [];
-
-    function getRandomQuestions() {
-      const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, 5);
-    }
-
-    function loadQuiz() {
-      selectedQuestions = getRandomQuestions();
-      const quizContainer = document.getElementById('quiz');
-      quizContainer.innerHTML = '';
-      selectedQuestions.forEach((q, index) => {
-        const qHTML = `
-          <div class="question">
-            <p><strong>Q${index + 1}:</strong> ${q.question}</p>
-            <div class="options">
-              ${q.options.map(opt => `
-                <label>
-                  <input type="radio" name="q${index}" value="${opt}">
-                  ${opt}
-                </label>
-              `).join('')}
-            </div>
-          </div>
-        `;
-        quizContainer.innerHTML += qHTML;
-      });
-    }
-
-    function getRank(score) {
-      if (score === 5) return "🏆 Master Gamer";
-      if (score >= 3) return "🎯 Intermediate Gamer";
-      return "🎮 Beginner";
-    }
-
-    function submitQuiz() {
-      let score = 0;
-      selectedQuestions.forEach((q, index) => {
-        const selected = document.querySelector(`input[name="q${index}"]:checked`);
-        if (selected && selected.value === q.answer) {
-          score++;
-        }
-      });
-
-      const rank = getRank(score);
-      const resultContainer = document.getElementById('result');
-      resultContainer.innerHTML = `
-        You scored ${score} out of 5.<br><strong>Your Rank: ${rank}</strong>
-        <br><br>
-        <a href="https://wa.me/?text=I scored ${score}/5 in the Gaming Quiz (${rank}) on PlayZone! 🎮" target="_blank">
-          📤 Share on WhatsApp
-        </a>
-      `;
-
-      // Save result locally
-      localStorage.setItem("lastQuizResult", `${score}/5 - ${rank}`);
-      document.getElementById('lastScore').innerText = `📌 Last score: ${score}/5 - ${rank}`;
-    }
-  </script>
 
 </body>
 
@@ -4453,15 +4343,6 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
             <div class="footer-section">
                 <h3>NEWSLETTER</h3>
                 <p>Subscribe for gaming news and exclusive offers</p>
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit" class="subscribe-btn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </form>
-                
         
         <!-- Footer Bottom -->
         <div class="footer-bottom">
@@ -4903,6 +4784,7 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
 
     
 </script>
+
 
 
 
