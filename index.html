@@ -966,58 +966,41 @@
 
     
   <title>Gaming Articles</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 100px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-    .article {
-      background: #fff;
-      margin-bottom: 30px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .article img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .article h2 {
-      margin-top: 15px;
-      color: #333;
-    }
-    .article p, .article ul {
-      color: #555;
-    }
-    .read-more {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .extra-content {
-      display: none;
-      margin-top: 10px;
-    }
+<style>
+  .container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.article {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+}
+    /* Tablet */
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -4076,7 +4059,7 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
         <li><a href="https://www.epicgames.com/site/en-US/home" style="color:#bbb; text-decoration:none;">PC Games</a></li>
         <li><a href="https://play.google.com/store/games?device=windows" style="color:#bbb; text-decoration:none;">Android Games</a></li>
         <li><a href="guide.html" style="color:#bbb; text-decoration:none;">Game Setup Guides</a></li>
-        <li><a href="mindex.html" style="color:#bbb; text-decoration:none;">Gaming Tips</a></li>
+        <li><a href="require2.html" style="color:#bbb; text-decoration:none;">Gaming Tips</a></li>
       </ul>
     </div>
 
@@ -4135,6 +4118,7 @@ Whether you’re grinding Arena, trying for your first FNCS qualification, or ju
         });
     });
 </script>
+
 
 
 
