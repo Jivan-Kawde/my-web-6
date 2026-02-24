@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Policies</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        /* Policy Sections */
+        .policy-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .policy-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .policy-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .privacy .policy-icon {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+        }
+
+        .terms .policy-icon {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+        }
+
+        .cookies .policy-icon {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .policy-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .policy-section p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+
+
+        .privacy .read-more {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+        }
+
+        .terms .read-more {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+        }
+
+        .cookies .read-more {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+        }
+
+        .read-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Decorative Elements */
+        .policy-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .privacy::before {
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+        }
+
+        .terms::before {
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+        }
+
+        .cookies::before {
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .policy-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .policy-section {
+                width: 90%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Terms & Conditions</h1>
+
+        <div class="policy-container">
+            <!-- Privacy Policy Section -->
+            <section class="policy-section privacy">
+                <div class="policy-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2>Terms & Conditions</h2>
+                <p>
+                    Terms and Conditions – Playzone JK
+
+                    By accessing this website, you agree to comply with these terms and conditions.
+
+                    Intellectual Property
+
+                    All content published on Playzone JK (text, graphics, articles,excluding images) is the property of
+                    Playzone JK unless otherwise stated. Unauthorized copying or reproduction is prohibited.
+
+                    Acceptable Use
+
+                    Users agree not to:
+
+                    Use this website for illegal purposes
+
+                    Attempt to harm, hack, or disrupt the website
+
+                    Copy content without permission
+
+                    Educational Purpose
+
+                    All content is provided for educational and informational purposes only.
+
+                </p>
+
+            </section>
+
+        </div>
+    </div>
+</body>
+
+</html>
